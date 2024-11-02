@@ -1,8 +1,9 @@
 import os
 from configparser import ConfigParser
+from typing import Any
 
 
-def config(filename="database.ini", section="postgresql"):
+def config(filename: str ="database.ini", section: str ="postgresql") -> Any:
     '''Функция для подключения к БД'''
 
     filename = os.path.join(os.path.dirname(__file__), filename)
@@ -20,7 +21,3 @@ def config(filename="database.ini", section="postgresql"):
         return None
 
     return db
-
-if __name__ == '__main__':
-    par = config()
-    print(par)
